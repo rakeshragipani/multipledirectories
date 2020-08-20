@@ -7,7 +7,7 @@ variable "functionname" {
 variable "role" {
   description = "role to create a lambda"
   type        = string
-  default     = "iam_role_lambda"
+  default     = "arn:aws:iam::246944263478:role/iam_for_lambda"
 }
 variable "aliasname" {
   description = "role to create a lambda alias name"
