@@ -4,8 +4,8 @@ variable "functionname" {
   default     = "repo1"
 }
 
-variable "zones" {
-  description = "Map of Route53 zone parameters"
-  type        = map(any)
-  default     = {}
+variable "role" {
+  description = "role to create a lambda"
+  type        = string
+  default     = "iam_role_lambda"
 }
