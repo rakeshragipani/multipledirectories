@@ -10,13 +10,19 @@ data "archive_file" "welcome" {
 
 resource "aws_lambda_function" "test_lambda" {
   filename      = "${local.lambda_zip_location}"
-  function_name = "welcome-nodejs"
-  role          = "${aws_iam_role.iam_for_lambda.arn}"
+  function_name = var.functionname
+  role          = var.role
   handler       = "index.handler"
  
   source_code_hash = "${base64sha256(local.lambda_zip_location)}"
 
   runtime = "nodejs12.x"
 }
+
+resource "aws_lambda_alias" "with_refresh" {
+  name        = var.aliasname
+  function_name    = aws_lambda_function.test_lambda.arn
+  function_version = var.function_version != "" ? var.function_version : "$LATEST"
+  }
   
 
