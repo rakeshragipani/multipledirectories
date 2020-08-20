@@ -9,3 +9,8 @@ variable "role" {
   type        = string
   default     = "iam_role_lambda"
 }
+variable "aliasname" {
+  description = "role to create a lambda alias name"
+  type        = string
+  default     = "aliasname"
+}
