@@ -1,7 +1,7 @@
 variable "functionname" {
   description = "lambda function name"
   type        = string
-  default     = "repo1"
+  default     = "repo2"
 }
 
 variable "role" {
