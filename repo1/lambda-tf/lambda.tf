@@ -21,7 +21,7 @@ resource "aws_lambda_function" "test_lambda" {
 
 resource "aws_lambda_alias" "with_refresh" {
   name        = var.aliasname
-  function_name    = var.functionname
+  function_name    = aws_lambda_function.test_lambda.arn
   function_version = var.function_version != "" ? var.function_version : "$LATEST"
   }
   
