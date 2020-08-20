@@ -19,3 +19,8 @@ variable "region" {
   type        = string
   default     = "us-east-1"
 }
+variable "function_version" {
+  description = "Lambda function version for which you are creating the alias. Pattern: ($LATEST|[0-9]+)."
+  type        = string
+  default     = ""
+  }
