@@ -10,7 +10,6 @@ data "archive_file" "welcome" {
 
 resource "aws_lambda_function" "test_lambda" {
   filename      = "${local.lambda_zip_location}"
-  region        = var.region
   function_name = var.functionname
   role          = var.role
   handler       = "index.handler"
