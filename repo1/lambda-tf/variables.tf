@@ -14,3 +14,8 @@ variable "aliasname" {
   type        = string
   default     = "aliasname"
 }
+variable "region" {
+  description = "specifies the region"
+  type        = string
+  default     = "us-east-1"
+}
