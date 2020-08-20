@@ -10,6 +10,7 @@ data "archive_file" "welcome" {
 
 resource "aws_lambda_function" "test_lambda" {
   filename      = "${local.lambda_zip_location}"
+  region        = var.region
   function_name = var.functionname
   role          = var.role
   handler       = "index.handler"
@@ -22,6 +23,7 @@ resource "aws_lambda_function" "test_lambda" {
 resource "aws_lambda_alias" "with_refresh" {
   name        = var.aliasname
   function_name    = var.functionname
+  function_version = var.function_version != "" ? var.function_version : "$LATEST"
   }
   
 
