@@ -1,7 +1,7 @@
-variable "create" {
-  description = "Whether to create Route53 zone"
-  type        = bool
-  default     = true
+variable "functionname" {
+  description = "lambda function name"
+  type        = string
+  default     = "repo1"
 }
 
 variable "zones" {
